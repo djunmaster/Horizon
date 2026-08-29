@@ -1,9 +1,9 @@
 {
   "ai": {
-    "provider": "deepseek",
-    "model": "deepseek-v4-flash",
-    "base_url": "https://api.deepseek.com",
-    "api_key_env": "DEEPSEEK_API_KEY",
+    "provider": "openai",
+    "model": "hy3",
+    "base_url": "https://opencode.ai/zen/go/v1",
+    "api_key_env": "OPENAI_API_KEY",
     "temperature": 0.3,
     "max_tokens": 8192,
     "throttle_sec": 1,
@@ -120,6 +120,363 @@
         "enabled": true,
         "category": "linux-kernel",
         "profile": "tech-news"
+      },
+      {
+        "name": "Aivi.fyi",
+        "url": "https://www.aivi.fyi/feed.xml",
+        "enabled": true,
+        "category": "ai-blog",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "马克的技术工作坊 YouTube",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCbIeBdHsfTpHsICZy59ZzhA",
+        "enabled": true,
+        "category": "youtube-ai",
+        "profile": "tech-blog"
+      },
+      {
+        "name": "AIHot Full",
+        "url": "https://aihot.virxact.com/feed/full.xml?aihot_actor=8bd6b63a-7233-4dda-a5fa-e237e4a3c138",
+        "enabled": true,
+        "category": "ai-hot",
+        "profile": "tech-news"
+      },
+      {
+        "name": "AIHot All",
+        "url": "https://aihot.virxact.com/feed/all.xml?aihot_actor=8bd6b63a-7233-4dda-a5fa-e237e4a3c138",
+        "enabled": true,
+        "category": "ai-hot",
+        "profile": "tech-news"
+      },
+      {
+        "name": "OpenAI News",
+        "url": "https://openai.com/news/rss.xml",
+        "enabled": true,
+        "category": "official-ai",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Google AI Blog",
+        "url": "https://blog.google/technology/ai/rss/",
+        "enabled": true,
+        "category": "official-ai",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Google DeepMind Blog",
+        "url": "https://deepmind.google/blog/rss.xml",
+        "enabled": true,
+        "category": "official-ai",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Google Research Blog",
+        "url": "https://research.google/blog/rss/",
+        "enabled": true,
+        "category": "ai-research",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "NVIDIA Deep Learning Blog",
+        "url": "https://blogs.nvidia.com/blog/category/deep-learning/feed/",
+        "enabled": true,
+        "category": "ai-infra",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Hugging Face Blog",
+        "url": "https://huggingface.co/blog/feed.xml",
+        "enabled": true,
+        "category": "ai-platform",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "PyTorch Blog",
+        "url": "https://pytorch.org/blog/feed.xml",
+        "enabled": true,
+        "category": "ai-framework",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Latent Space",
+        "url": "https://www.latent.space/feed",
+        "enabled": true,
+        "category": "ai-blog",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Microsoft Research",
+        "url": "https://www.microsoft.com/en-us/research/feed/",
+        "enabled": true,
+        "category": "ai-research",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Cloudflare AI",
+        "url": "https://blog.cloudflare.com/tag/ai/rss/",
+        "enabled": true,
+        "category": "ai-infra",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "GitHub AI & ML Blog",
+        "url": "https://github.blog/ai-and-ml/feed/",
+        "enabled": true,
+        "category": "developer-ai",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "The Gradient",
+        "url": "https://thegradient.pub/rss/",
+        "enabled": true,
+        "category": "ai-research",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Meta Engineering",
+        "url": "https://engineering.fb.com/feed/",
+        "enabled": true,
+        "category": "engineering",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Together AI Blog",
+        "url": "https://www.together.ai/blog/rss.xml",
+        "enabled": true,
+        "category": "ai-infra",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Replicate Blog",
+        "url": "https://replicate.com/blog/rss",
+        "enabled": true,
+        "category": "ai-platform",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "腾讯技术工程",
+        "url": "https://wechat2rss.bestblogs.dev/feed/1e0ac39f8952b2e7f0807313cf2633d25078a171.xml",
+        "enabled": true,
+        "category": "wechat-engineering",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "阿里云开发者",
+        "url": "https://wechat2rss.bestblogs.dev/feed/39fc51b0b1316137e608c45da5dbbca4f9eb9538.xml",
+        "enabled": true,
+        "category": "wechat-engineering",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "新智元",
+        "url": "https://wechat2rss.bestblogs.dev/feed/e531a18b21c34cf787b83ab444eef659d7a980de.xml",
+        "enabled": true,
+        "category": "wechat-ai",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Founder Park",
+        "url": "https://wechat2rss.bestblogs.dev/feed/f940695505f2be1399d23cc98182297cadf6f90d.xml",
+        "enabled": true,
+        "category": "wechat-ai",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "歸藏的AI工具箱",
+        "url": "https://wechat2rss.bestblogs.dev/feed/1c3e3571b1627d23ee9c64521a0b0a41d3fe2987.xml",
+        "enabled": true,
+        "category": "wechat-ai",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "InfoQ",
+        "url": "https://wechat2rss.bestblogs.dev/feed/13da94d7eb314b49fa251cb7e8399cae29d772db.xml",
+        "enabled": true,
+        "category": "wechat-engineering",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "AI前线",
+        "url": "https://wechat2rss.bestblogs.dev/feed/25185b01482da0f485418ecb92e208b4416712fb.xml",
+        "enabled": true,
+        "category": "wechat-ai",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "极客公园",
+        "url": "https://wechat2rss.bestblogs.dev/feed/11ea7163fbea99e2ab9fa2812ac3d179574886cc.xml",
+        "enabled": true,
+        "category": "wechat-tech-media",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "谷歌开发者",
+        "url": "https://wechat2rss.bestblogs.dev/feed/9c65b8470acb8a5400199616536995d5ba90f52e.xml",
+        "enabled": true,
+        "category": "wechat-engineering",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "月之暗面 Kimi",
+        "url": "https://wechat2rss.bestblogs.dev/feed/c5c43d4bc17bae656763859ed0903bb6314ec6fe.xml",
+        "enabled": true,
+        "category": "wechat-ai-team",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "DeepSeek",
+        "url": "https://wechat2rss.bestblogs.dev/feed/1709da4f538d4ce4fb6d7a8ba1a5a1c297919601.xml",
+        "enabled": true,
+        "category": "wechat-ai-team",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Jina AI",
+        "url": "https://wechat2rss.bestblogs.dev/feed/ff2c5468828ebe7236afd6c1d128e219774487c2.xml",
+        "enabled": true,
+        "category": "wechat-ai-team",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Dify",
+        "url": "https://wechat2rss.bestblogs.dev/feed/e46c03a4cb65509e22ab9a8507888a2096319d65.xml",
+        "enabled": true,
+        "category": "wechat-ai-team",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "智谱",
+        "url": "https://wechat2rss.bestblogs.dev/feed/433d2134dca54d80804daf32e8be546155be3300.xml",
+        "enabled": true,
+        "category": "wechat-ai-team",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "通义实验室",
+        "url": "https://wechat2rss.bestblogs.dev/feed/4ebee6222ae08705b8aabc9116f0defbcb6b17c6.xml",
+        "enabled": true,
+        "category": "wechat-ai-team",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "腾讯混元",
+        "url": "https://wechat2rss.bestblogs.dev/feed/306ce19a1ca590c9c2df781789e828d1acfa1356.xml",
+        "enabled": true,
+        "category": "wechat-ai-team",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "AI科技评论",
+        "url": "https://wechat2rss.bestblogs.dev/feed/789e5fefb9cc2646ba7b680cb7a88378a34eb7a4.xml",
+        "enabled": true,
+        "category": "wechat-ai",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "DeeplearningAI",
+        "url": "https://wechat2rss.bestblogs.dev/feed/9d094d066a5faacff0eb0a6b95efbba20d4f1fc9.xml",
+        "enabled": true,
+        "category": "wechat-ai",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "字节跳动Seed",
+        "url": "https://wechat2rss.bestblogs.dev/feed/6efd40bb335d2037f365d284cb5e00f0843e737e.xml",
+        "enabled": true,
+        "category": "wechat-ai-team",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "MiniMax 稀宇科技",
+        "url": "https://wechat2rss.bestblogs.dev/feed/00306b171f754d463b28cf83f3ba086ad009b430.xml",
+        "enabled": true,
+        "category": "wechat-ai-team",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "AINLP",
+        "url": "https://wechat2rss.bestblogs.dev/feed/875df1d1a991bf9250ba9813e3148f58ef2240d4.xml",
+        "enabled": true,
+        "category": "wechat-ai",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "机器之心",
+        "url": "https://wechat2rss.bestblogs.dev/feed/8d97af31b0de9e48da74558af128a4673d78c9a3.xml",
+        "enabled": true,
+        "category": "wechat-ai",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "魔搭ModelScope社区",
+        "url": "https://wechat2rss.bestblogs.dev/feed/d993a885260f96057b9a4c96212cb2c95bb5054b.xml",
+        "enabled": true,
+        "category": "wechat-ai-team",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "刘小排r",
+        "url": "https://wechat2rss.bestblogs.dev/feed/484d4199ae6c0b72ea01e7e0597a1f74933dfb62.xml",
+        "enabled": true,
+        "category": "wechat-ai-blog",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "卡尔的AI沃茨",
+        "url": "https://wechat2rss.bestblogs.dev/feed/8a1fc997e5c742e91ad7c253836c28ca3a69ccb1.xml",
+        "enabled": true,
+        "category": "wechat-ai-blog",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "数字生命卡兹克",
+        "url": "https://wechat2rss.bestblogs.dev/feed/ff621c3e98d6ae6fceb3397e57441ffc6ea3c17f.xml",
+        "enabled": true,
+        "category": "wechat-ai-blog",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
       }
     ],
     "reddit": {
@@ -154,9 +511,77 @@
           "channel": "zaihuapd",
           "enabled": true,
           "fetch_limit": 20,
-          "profile": ["tech-news", "finance-news"]
+          "profile": [
+            "tech-news",
+            "finance-news"
+          ]
         }
       ]
+    },
+    "twitter": {
+      "enabled": true,
+      "mode": "apify",
+      "users": [
+        "gengdaJ",
+        "Khazix0918",
+        "thsottiaux",
+        "aiwarts"
+      ],
+      "fetch_limit": 20,
+      "category": "x-ai",
+      "profile": "tech-news",
+      "fetch_reply_text": false,
+      "max_replies_per_tweet": 3,
+      "max_tweets_to_expand": 10,
+      "reply_min_likes": 0,
+      "apify_token_env": "APIFY_TOKEN",
+      "actor_id": "altimis~scweet"
+    },
+    "ossinsight": {
+      "enabled": true,
+      "period": "past_24_hours",
+      "languages": [
+        "All",
+        "Python",
+        "TypeScript",
+        "Rust",
+        "Go"
+      ],
+      "keywords": [
+        "ai",
+        "llm",
+        "agent",
+        "rag",
+        "mcp",
+        "inference",
+        "machine learning",
+        "deep learning"
+      ],
+      "min_stars": 10,
+      "max_items": 30,
+      "category": "oss-trending",
+      "profile": "tech-news"
+    },
+    "gdelt": {
+      "enabled": true,
+      "query": "artificial intelligence OR generative AI OR large language model OR OpenAI OR DeepSeek",
+      "mode": "ArtList",
+      "max_records": 30,
+      "timespan": "24h",
+      "language": "english",
+      "country": null,
+      "category": "global-ai-news",
+      "profile": "tech-news"
+    },
+    "google_news": {
+      "enabled": true,
+      "query": "artificial intelligence OR LLM OR AI agent OR OpenAI OR DeepSeek",
+      "language": "zh-CN",
+      "country": "CN",
+      "ceid": "CN:zh-Hans",
+      "max_results": 30,
+      "category": "google-news-ai",
+      "profile": "tech-news"
     }
   },
   "collection": {
