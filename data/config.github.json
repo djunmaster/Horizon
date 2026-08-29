@@ -81,24 +81,21 @@
         "url": "https://vllm.ai/blog/rss.xml",
         "enabled": true,
         "category": "llm-inference",
-        "profile": "tech-blog",
-        "content_extractor": "trafilatura"
+        "profile": "tech-blog"
       },
       {
         "name": "Sean Goedecke",
         "url": "https://www.seangoedecke.com/rss.xml",
         "enabled": true,
         "category": "software-engineering",
-        "profile": "tech-blog",
-        "content_extractor": "trafilatura"
+        "profile": "tech-blog"
       },
       {
         "name": "CNBC Finance",
         "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664",
         "enabled": true,
         "category": "finance",
-        "profile": "finance-news",
-        "content_extractor": "trafilatura"
+        "profile": "finance-news"
       },
       {
         "name": "GitHub Trending - Daily",
@@ -126,8 +123,7 @@
         "url": "https://www.aivi.fyi/feed.xml",
         "enabled": true,
         "category": "ai-blog",
-        "profile": "tech-blog",
-        "content_extractor": "trafilatura"
+        "profile": "tech-blog"
       },
       {
         "name": "马克的技术工作坊 YouTube",
@@ -155,328 +151,287 @@
         "url": "https://openai.com/news/rss.xml",
         "enabled": true,
         "category": "official-ai",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "Google AI Blog",
         "url": "https://blog.google/technology/ai/rss/",
         "enabled": true,
         "category": "official-ai",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "Google DeepMind Blog",
         "url": "https://deepmind.google/blog/rss.xml",
         "enabled": true,
         "category": "official-ai",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "Google Research Blog",
         "url": "https://research.google/blog/rss/",
         "enabled": true,
         "category": "ai-research",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "NVIDIA Deep Learning Blog",
         "url": "https://blogs.nvidia.com/blog/category/deep-learning/feed/",
         "enabled": true,
         "category": "ai-infra",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "Hugging Face Blog",
         "url": "https://huggingface.co/blog/feed.xml",
         "enabled": true,
         "category": "ai-platform",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "PyTorch Blog",
         "url": "https://pytorch.org/blog/feed.xml",
         "enabled": true,
         "category": "ai-framework",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "Latent Space",
         "url": "https://www.latent.space/feed",
         "enabled": true,
         "category": "ai-blog",
-        "profile": "tech-blog",
-        "content_extractor": "trafilatura"
+        "profile": "tech-blog"
       },
       {
         "name": "Microsoft Research",
         "url": "https://www.microsoft.com/en-us/research/feed/",
         "enabled": true,
         "category": "ai-research",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "Cloudflare AI",
         "url": "https://blog.cloudflare.com/tag/ai/rss/",
         "enabled": true,
         "category": "ai-infra",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "GitHub AI & ML Blog",
         "url": "https://github.blog/ai-and-ml/feed/",
         "enabled": true,
         "category": "developer-ai",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "The Gradient",
         "url": "https://thegradient.pub/rss/",
         "enabled": true,
         "category": "ai-research",
-        "profile": "tech-blog",
-        "content_extractor": "trafilatura"
+        "profile": "tech-blog"
       },
       {
         "name": "Meta Engineering",
         "url": "https://engineering.fb.com/feed/",
         "enabled": true,
         "category": "engineering",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "Together AI Blog",
         "url": "https://www.together.ai/blog/rss.xml",
         "enabled": true,
         "category": "ai-infra",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "Replicate Blog",
         "url": "https://replicate.com/blog/rss",
         "enabled": true,
         "category": "ai-platform",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "腾讯技术工程",
         "url": "https://wechat2rss.bestblogs.dev/feed/1e0ac39f8952b2e7f0807313cf2633d25078a171.xml",
         "enabled": true,
         "category": "wechat-engineering",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "阿里云开发者",
         "url": "https://wechat2rss.bestblogs.dev/feed/39fc51b0b1316137e608c45da5dbbca4f9eb9538.xml",
         "enabled": true,
         "category": "wechat-engineering",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "新智元",
         "url": "https://wechat2rss.bestblogs.dev/feed/e531a18b21c34cf787b83ab444eef659d7a980de.xml",
         "enabled": true,
         "category": "wechat-ai",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "Founder Park",
         "url": "https://wechat2rss.bestblogs.dev/feed/f940695505f2be1399d23cc98182297cadf6f90d.xml",
         "enabled": true,
         "category": "wechat-ai",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "歸藏的AI工具箱",
         "url": "https://wechat2rss.bestblogs.dev/feed/1c3e3571b1627d23ee9c64521a0b0a41d3fe2987.xml",
         "enabled": true,
         "category": "wechat-ai",
-        "profile": "tech-blog",
-        "content_extractor": "trafilatura"
+        "profile": "tech-blog"
       },
       {
         "name": "InfoQ",
         "url": "https://wechat2rss.bestblogs.dev/feed/13da94d7eb314b49fa251cb7e8399cae29d772db.xml",
         "enabled": true,
         "category": "wechat-engineering",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "AI前线",
         "url": "https://wechat2rss.bestblogs.dev/feed/25185b01482da0f485418ecb92e208b4416712fb.xml",
         "enabled": true,
         "category": "wechat-ai",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "极客公园",
         "url": "https://wechat2rss.bestblogs.dev/feed/11ea7163fbea99e2ab9fa2812ac3d179574886cc.xml",
         "enabled": true,
         "category": "wechat-tech-media",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "谷歌开发者",
         "url": "https://wechat2rss.bestblogs.dev/feed/9c65b8470acb8a5400199616536995d5ba90f52e.xml",
         "enabled": true,
         "category": "wechat-engineering",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "月之暗面 Kimi",
         "url": "https://wechat2rss.bestblogs.dev/feed/c5c43d4bc17bae656763859ed0903bb6314ec6fe.xml",
         "enabled": true,
         "category": "wechat-ai-team",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "DeepSeek",
         "url": "https://wechat2rss.bestblogs.dev/feed/1709da4f538d4ce4fb6d7a8ba1a5a1c297919601.xml",
         "enabled": true,
         "category": "wechat-ai-team",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "Jina AI",
         "url": "https://wechat2rss.bestblogs.dev/feed/ff2c5468828ebe7236afd6c1d128e219774487c2.xml",
         "enabled": true,
         "category": "wechat-ai-team",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "Dify",
         "url": "https://wechat2rss.bestblogs.dev/feed/e46c03a4cb65509e22ab9a8507888a2096319d65.xml",
         "enabled": true,
         "category": "wechat-ai-team",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "智谱",
         "url": "https://wechat2rss.bestblogs.dev/feed/433d2134dca54d80804daf32e8be546155be3300.xml",
         "enabled": true,
         "category": "wechat-ai-team",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "通义实验室",
         "url": "https://wechat2rss.bestblogs.dev/feed/4ebee6222ae08705b8aabc9116f0defbcb6b17c6.xml",
         "enabled": true,
         "category": "wechat-ai-team",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "腾讯混元",
         "url": "https://wechat2rss.bestblogs.dev/feed/306ce19a1ca590c9c2df781789e828d1acfa1356.xml",
         "enabled": true,
         "category": "wechat-ai-team",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "AI科技评论",
         "url": "https://wechat2rss.bestblogs.dev/feed/789e5fefb9cc2646ba7b680cb7a88378a34eb7a4.xml",
         "enabled": true,
         "category": "wechat-ai",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "DeeplearningAI",
         "url": "https://wechat2rss.bestblogs.dev/feed/9d094d066a5faacff0eb0a6b95efbba20d4f1fc9.xml",
         "enabled": true,
         "category": "wechat-ai",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "字节跳动Seed",
         "url": "https://wechat2rss.bestblogs.dev/feed/6efd40bb335d2037f365d284cb5e00f0843e737e.xml",
         "enabled": true,
         "category": "wechat-ai-team",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "MiniMax 稀宇科技",
         "url": "https://wechat2rss.bestblogs.dev/feed/00306b171f754d463b28cf83f3ba086ad009b430.xml",
         "enabled": true,
         "category": "wechat-ai-team",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "AINLP",
         "url": "https://wechat2rss.bestblogs.dev/feed/875df1d1a991bf9250ba9813e3148f58ef2240d4.xml",
         "enabled": true,
         "category": "wechat-ai",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "机器之心",
         "url": "https://wechat2rss.bestblogs.dev/feed/8d97af31b0de9e48da74558af128a4673d78c9a3.xml",
         "enabled": true,
         "category": "wechat-ai",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "魔搭ModelScope社区",
         "url": "https://wechat2rss.bestblogs.dev/feed/d993a885260f96057b9a4c96212cb2c95bb5054b.xml",
         "enabled": true,
         "category": "wechat-ai-team",
-        "profile": "tech-news",
-        "content_extractor": "trafilatura"
+        "profile": "tech-news"
       },
       {
         "name": "刘小排r",
         "url": "https://wechat2rss.bestblogs.dev/feed/484d4199ae6c0b72ea01e7e0597a1f74933dfb62.xml",
         "enabled": true,
         "category": "wechat-ai-blog",
-        "profile": "tech-blog",
-        "content_extractor": "trafilatura"
+        "profile": "tech-blog"
       },
       {
         "name": "卡尔的AI沃茨",
         "url": "https://wechat2rss.bestblogs.dev/feed/8a1fc997e5c742e91ad7c253836c28ca3a69ccb1.xml",
         "enabled": true,
         "category": "wechat-ai-blog",
-        "profile": "tech-blog",
-        "content_extractor": "trafilatura"
+        "profile": "tech-blog"
       },
       {
         "name": "数字生命卡兹克",
         "url": "https://wechat2rss.bestblogs.dev/feed/ff621c3e98d6ae6fceb3397e57441ffc6ea3c17f.xml",
         "enabled": true,
         "category": "wechat-ai-blog",
-        "profile": "tech-blog",
-        "content_extractor": "trafilatura"
+        "profile": "tech-blog"
       }
     ],
     "reddit": {
