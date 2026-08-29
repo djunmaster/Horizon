@@ -166,8 +166,8 @@ def test_apify_payload_uses_profile_urls_and_time_window(monkeypatch):
     assert payloads
     payload = payloads[0]
     assert payload["profile_urls"] == ["https://x.com/karpathy"]
-    assert payload["since"] == "2026-08-28T16:18:18Z"
-    assert payload["until"].endswith("Z")
+    assert payload["since"] == "2026-08-28_16:18:18_UTC"
+    assert payload["until"].endswith("_UTC")
     assert payload["max_items"] == 100
 
 
