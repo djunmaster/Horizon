@@ -474,7 +474,7 @@
       ]
     },
     "twitter": {
-      "enabled": true,
+      "enabled": false,
       "mode": "apify",
       "users": [
         "gengdaJ",
