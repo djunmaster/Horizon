@@ -1,6 +1,7 @@
 """Tests for TwitterScraper."""
 
 import asyncio
+import json
 from datetime import datetime, timedelta, timezone
 
 import httpx
@@ -136,6 +137,38 @@ def test_successful_fetch_returns_items(monkeypatch):
     assert result[0].source_type.value == "twitter"
     assert result[0].metadata["favorite_count"] == 10
     assert result[0].profile == "twitter-profile"
+
+
+def test_apify_payload_uses_profile_urls_and_time_window(monkeypatch):
+    monkeypatch.setenv("APIFY_TOKEN", "test_token")
+    since = datetime(2026, 8, 28, 16, 18, 18, tzinfo=timezone.utc)
+    payloads = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if "/runs" in request.url.path and request.method == "POST":
+            payloads.append(json.loads(request.content.decode()))
+            return httpx.Response(200, json=_run_resp())
+        if "/actor-runs/" in request.url.path:
+            return httpx.Response(200, json=_status_resp())
+        if "/datasets/" in request.url.path:
+            return httpx.Response(200, json=[])
+        raise AssertionError(f"Unexpected: {request.url}")
+
+    transport = httpx.MockTransport(handler)
+    client = httpx.AsyncClient(transport=transport)
+    asyncio.run(
+        TwitterScraper(_make_config(users=["@karpathy"], fetch_limit=20), client).fetch(
+            since
+        )
+    )
+    asyncio.run(client.aclose())
+
+    assert payloads
+    payload = payloads[0]
+    assert payload["profile_urls"] == ["https://x.com/karpathy"]
+    assert payload["since"] == "2026-08-28T16:18:18Z"
+    assert payload["until"].endswith("Z")
+    assert payload["max_items"] == 100
 
 
 def test_playwright_parse_tweet_propagates_profile():

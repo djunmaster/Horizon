@@ -24,6 +24,21 @@ def _apify_headers(token: str) -> dict[str, str]:
     return {"Authorization": f"Bearer {token}"}
 
 
+def _format_apify_timestamp(value: datetime) -> str:
+    if value.tzinfo is None:
+        value = value.replace(tzinfo=timezone.utc)
+    return value.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _profile_url(user: str) -> str:
+    normalized = user.strip()
+    if normalized.startswith(("https://", "http://")):
+        return normalized
+
+    handle = normalized.lstrip("@").strip("/")
+    return f"https://x.com/{handle}"
+
+
 class TwitterScraper(BaseScraper):
     """Fetch tweets via the Apify altimis/scweet actor."""
 
@@ -49,7 +64,7 @@ class TwitterScraper(BaseScraper):
 
         logger.info(f"Fetching Twitter (Apify) for users: {users}")
 
-        run_id, dataset_id = await self._start_run(token, users)
+        run_id, dataset_id = await self._start_run(token, users, since)
         if not run_id:
             return []
 
@@ -70,11 +85,13 @@ class TwitterScraper(BaseScraper):
         return items
 
     async def _start_run(
-        self, token: str, users: List[str]
+        self, token: str, users: List[str], since: datetime
     ) -> tuple[Optional[str], Optional[str]]:
         payload = {
             "source_mode": "profiles",
-            "profile_urls": users,
+            "profile_urls": [_profile_url(user) for user in users],
+            "since": _format_apify_timestamp(since),
+            "until": _format_apify_timestamp(datetime.now(timezone.utc)),
             "search_sort": "Latest",
             "max_items": max(100, self.config.fetch_limit),
         }
