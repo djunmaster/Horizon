@@ -20,6 +20,10 @@ _POLL_INTERVAL = 3.0
 _MAX_WAIT = 180
 
 
+def _apify_headers(token: str) -> dict[str, str]:
+    return {"Authorization": f"Bearer {token}"}
+
+
 class TwitterScraper(BaseScraper):
     """Fetch tweets via the Apify altimis/scweet actor."""
 
@@ -74,9 +78,10 @@ class TwitterScraper(BaseScraper):
             "search_sort": "Latest",
             "max_items": max(100, self.config.fetch_limit),
         }
-        url = f"{_APIFY_BASE}/acts/{self.config.actor_id}/runs?token={token}"
+        url = f"{_APIFY_BASE}/acts/{self.config.actor_id}/runs"
+        headers = _apify_headers(token)
         try:
-            resp = await self.client.post(url, json=payload, timeout=30.0)
+            resp = await self.client.post(url, json=payload, headers=headers, timeout=30.0)
             resp.raise_for_status()
             data = resp.json()["data"]
             run_id = data["id"]
@@ -88,11 +93,12 @@ class TwitterScraper(BaseScraper):
             return None, None
 
     async def _wait_for_run(self, token: str, run_id: str) -> bool:
-        url = f"{_APIFY_BASE}/actor-runs/{run_id}?token={token}"
+        url = f"{_APIFY_BASE}/actor-runs/{run_id}"
+        headers = _apify_headers(token)
         elapsed = 0.0
         while elapsed < _MAX_WAIT:
             try:
-                resp = await self.client.get(url, timeout=10.0)
+                resp = await self.client.get(url, headers=headers, timeout=10.0)
                 resp.raise_for_status()
                 status = resp.json()["data"]["status"]
                 if status == "SUCCEEDED":
@@ -108,9 +114,10 @@ class TwitterScraper(BaseScraper):
         return False
 
     async def _fetch_dataset(self, token: str, dataset_id: str) -> list:
-        url = f"{_APIFY_BASE}/datasets/{dataset_id}/items?token={token}"
+        url = f"{_APIFY_BASE}/datasets/{dataset_id}/items"
+        headers = _apify_headers(token)
         try:
-            resp = await self.client.get(url, timeout=30.0)
+            resp = await self.client.get(url, headers=headers, timeout=30.0)
             resp.raise_for_status()
             return resp.json()
         except Exception as exc:
@@ -142,9 +149,10 @@ class TwitterScraper(BaseScraper):
             "max_items": max_items,
         }
 
-        url = f"{_APIFY_BASE}/acts/{self.config.actor_id}/runs?token={token}"
+        url = f"{_APIFY_BASE}/acts/{self.config.actor_id}/runs"
+        headers = _apify_headers(token)
         try:
-            resp = await self.client.post(url, json=payload, timeout=30.0)
+            resp = await self.client.post(url, json=payload, headers=headers, timeout=30.0)
             resp.raise_for_status()
             data = resp.json()["data"]
             run_id = data["id"]
