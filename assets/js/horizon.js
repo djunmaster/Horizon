@@ -124,7 +124,33 @@
     }
   }
 
+  function setupDigestHome() {
+    var home = document.querySelector('.digest-home');
+    if (!home) return;
+
+    document.body.classList.add('hz-digest-home');
+
+    var lists = home.querySelectorAll('[data-digest-list]');
+    lists.forEach(function (list) {
+      var section = list.closest('.lang-section') || home;
+      var button = section.querySelector('[data-digest-load-more]');
+      if (!button) return;
+
+      button.addEventListener('click', function () {
+        var hiddenItems = list.querySelectorAll('.digest-item.is-extra-hidden');
+        hiddenItems.forEach(function (item, index) {
+          if (index < 5) item.classList.remove('is-extra-hidden');
+        });
+
+        if (!list.querySelector('.digest-item.is-extra-hidden')) {
+          button.hidden = true;
+        }
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    setupDigestHome();
     processScoreBadges();
     markSemanticElements();
     setupLanguageToggle();
