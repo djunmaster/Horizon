@@ -320,7 +320,8 @@ class HorizonOrchestrator:
                     front_matter = (
                         "---\n"
                         "layout: default\n"
-                        f"title: \"Horizon Summary: {today} ({lang.upper()})\"\n"
+                        f"title: \"Adam's Daily Digest: {today}\"\n"
+                        'description: "AI & research digest"\n'
                         f"date: {today}\n"
                         f"lang: {lang}\n"
                         "---\n\n"
@@ -333,6 +334,7 @@ class HorizonOrchestrator:
                         parts = summary_content.split("\n", 1)
                         if len(parts) > 1:
                             summary_content = parts[1].strip()
+                    summary_content = self._strip_web_summary_intro(summary_content)
 
                     with open(dest_path, "w", encoding="utf-8") as f:
                         f.write(front_matter + summary_content)
@@ -533,6 +535,25 @@ class HorizonOrchestrator:
             status="success" if items else "empty",
             items=items,
         )
+
+    @staticmethod
+    def _strip_web_summary_intro(summary: str) -> str:
+        """Remove the web-only stats intro before publishing docs posts."""
+        lines = summary.lstrip().splitlines()
+        if not lines or not lines[0].startswith(">"):
+            return summary
+
+        index = 0
+        while index < len(lines) and lines[index].startswith(">"):
+            index += 1
+        while index < len(lines) and not lines[index].strip():
+            index += 1
+        if index < len(lines) and lines[index].strip() == "---":
+            index += 1
+        while index < len(lines) and not lines[index].strip():
+            index += 1
+
+        return "\n".join(lines[index:]).lstrip()
 
     @staticmethod
     def _sub_source_label(item: ContentItem) -> str:
