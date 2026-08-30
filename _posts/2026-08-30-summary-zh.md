@@ -1,12 +1,9 @@
 ---
 layout: default
-title: "Horizon Summary: 2026-08-30 (ZH)"
+title: "Adam's Daily Digest: 2026-08-30"
+description: "AI & research digest"
 date: 2026-08-30
 lang: zh
----
-
-> 从 105 条内容中筛选出 7 条重要资讯。
-
 ---
 
 **科技新闻**
