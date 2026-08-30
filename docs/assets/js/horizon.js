@@ -169,7 +169,13 @@
     if (!date) return;
 
     document.body.classList.add('hz-summary-page');
-    projectName.textContent = "Adam's Daily Digest: " + date;
+    var dateNode = document.createElement('span');
+    dateNode.className = 'summary-date';
+    dateNode.textContent = date;
+    projectName.replaceChildren(
+      document.createTextNode("Adam's Daily Digest: "),
+      dateNode
+    );
     document.title = projectName.textContent + ' | Horizon Daily';
 
     var tagline = document.querySelector('.page-header .project-tagline');

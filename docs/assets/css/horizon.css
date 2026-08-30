@@ -399,27 +399,26 @@ body.hz-summary-page .page-header {
   position: relative;
   isolation: isolate;
   display: flex;
-  min-height: 410px;
-  padding: 108px 24px 82px;
+  min-height: 420px;
+  padding: 96px 24px 72px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background:
-    linear-gradient(90deg, #141854 0%, #68267c 48%, #e44e1d 100%) !important;
+  background: #101424 !important;
 }
 
 html.hz-summary-doc .page-header::before,
 body.hz-summary-page .page-header::before {
   content: "";
   position: absolute;
-  inset: -10px;
+  inset: -8px;
   z-index: 0;
   background-image: none;
-  background-position: center 42%;
+  background-position: center 43%;
   background-size: cover;
-  filter: saturate(0.82) contrast(1.08) brightness(0.74) blur(1.6px);
-  transform: scale(1.025);
+  filter: saturate(0.9) contrast(1.1) brightness(0.82) blur(0.6px);
+  transform: scale(1.018);
 }
 
 html.hz-summary-2026-08-30 .page-header::before {
@@ -433,8 +432,9 @@ body.hz-summary-page .page-header::after {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(19, 24, 84, 0.90) 0%, rgba(104, 38, 124, 0.72) 43%, rgba(228, 78, 29, 0.66) 100%),
-    linear-gradient(180deg, rgba(6, 10, 24, 0.20) 0%, rgba(6, 10, 24, 0.52) 100%);
+    linear-gradient(90deg, rgba(13, 18, 65, 0.76) 0%, rgba(92, 35, 111, 0.56) 48%, rgba(219, 82, 34, 0.50) 100%),
+    radial-gradient(circle at 50% 42%, rgba(5, 8, 22, 0.02) 0%, rgba(5, 8, 22, 0.20) 72%),
+    linear-gradient(180deg, rgba(5, 8, 22, 0.10) 0%, rgba(5, 8, 22, 0.34) 100%);
 }
 
 html.hz-summary-doc .page-header > *,
@@ -445,26 +445,31 @@ body.hz-summary-page .page-header > * {
 
 html.hz-summary-doc .page-header .project-name,
 body.hz-summary-page .page-header .project-name {
-  max-width: min(1120px, 92vw);
+  max-width: min(1280px, calc(100vw - 96px));
   margin: 0;
   color: #ffffff !important;
   font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif !important;
-  font-size: clamp(2.8rem, 4.2vw, 4.9rem);
+  font-size: 3.7rem;
   font-weight: 800 !important;
-  line-height: 1.06;
+  line-height: 1.08;
   letter-spacing: 0;
   text-align: center;
-  text-shadow: 0 14px 42px rgba(7, 9, 25, 0.44);
+  text-shadow: 0 14px 42px rgba(7, 9, 25, 0.38);
+}
+
+html.hz-summary-doc .page-header .summary-date,
+body.hz-summary-page .page-header .summary-date {
+  white-space: nowrap;
 }
 
 html.hz-summary-doc .page-header .project-tagline,
 body.hz-summary-page .page-header .project-tagline {
   max-width: 720px;
-  margin: 18px 0 0;
-  color: rgba(255, 255, 255, 0.84) !important;
+  margin: 16px 0 0;
+  color: rgba(255, 255, 255, 0.76) !important;
   font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif !important;
-  font-size: clamp(1.05rem, 1.25vw, 1.42rem);
-  font-weight: 500;
+  font-size: 1.08rem;
+  font-weight: 400;
   line-height: 1.4;
   letter-spacing: 0;
   text-align: center;
@@ -472,62 +477,71 @@ body.hz-summary-page .page-header .project-tagline {
 
 html.hz-summary-doc .page-header .btn,
 body.hz-summary-page .page-header .btn {
-  min-height: 44px;
-  margin-top: 32px;
-  padding: 0 20px;
-  border: 1px solid rgba(255, 255, 255, 0.54);
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: fit-content !important;
+  min-width: 154px;
+  max-width: calc(100vw - 48px);
+  min-height: 42px;
+  margin-top: 28px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.90);
-  box-shadow: 0 18px 44px rgba(6, 10, 24, 0.18);
-  color: #111827 !important;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 14px 36px rgba(6, 10, 24, 0.16);
+  color: #ffffff !important;
   font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  line-height: 44px;
+  line-height: 1;
   text-decoration: none;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 html.hz-summary-doc .page-header .btn:hover,
 body.hz-summary-page .page-header .btn:hover {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.56);
   text-decoration: none;
 }
 
 html.hz-summary-doc .lang-toggle,
 body.hz-summary-page .lang-toggle {
-  top: 24px;
-  right: 30px;
+  top: 22px;
+  right: 26px;
+  gap: 6px;
 }
 
 html.hz-summary-doc .lang-toggle button,
 body.hz-summary-page .lang-toggle button {
   min-width: 48px;
   min-height: 34px;
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.11);
-  color: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.24);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.82);
   font-weight: 700;
   backdrop-filter: blur(12px);
 }
 
 html.hz-summary-doc .lang-toggle button.active,
 body.hz-summary-page .lang-toggle button.active {
-  border-color: rgba(255, 255, 255, 0.42);
-  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.20);
   color: #ffffff;
 }
 
 html.hz-summary-doc .main-content,
 body.hz-summary-page .main-content {
-  max-width: 840px;
-  padding: 42px 24px 80px;
+  max-width: 820px;
+  padding: 44px 24px 84px;
   background: #ffffff;
-  color: #1d2433;
+  color: #202838;
   font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
-  line-height: 1.82;
+  line-height: 1.78;
 }
 
 html.hz-summary-doc .main-content > blockquote:first-of-type,
@@ -539,7 +553,7 @@ body.hz-summary-page .main-content > blockquote:first-of-type + hr {
 
 html.hz-summary-doc .main-content > p:first-of-type,
 body.hz-summary-page .main-content > p:first-of-type {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   color: #111827;
   font-size: 0.98rem;
   font-weight: 800;
@@ -547,31 +561,39 @@ body.hz-summary-page .main-content > p:first-of-type {
 
 html.hz-summary-doc .main-content > ol,
 body.hz-summary-page .main-content > ol {
-  margin: 0 0 34px !important;
-  padding: 15px 18px 15px 34px;
-  border: 1px solid #e7ebef;
-  border-radius: 6px;
-  background: #fbfbfa;
+  margin: 0 0 36px !important;
+  padding: 15px 0 18px 1.35rem;
+  border: 0;
+  border-top: 1px solid #e7ebef;
+  border-bottom: 1px solid #e7ebef;
+  border-radius: 0;
+  background: transparent;
 }
 
 html.hz-summary-doc .main-content > ol > li,
 body.hz-summary-page .main-content > ol > li {
-  padding: 0.18em 0;
+  padding: 0.14em 0;
+  color: #394253;
+}
+
+html.hz-summary-doc .main-content > ol .score-badge,
+body.hz-summary-page .main-content > ol .score-badge {
+  display: none;
 }
 
 html.hz-summary-doc .main-content hr,
 body.hz-summary-page .main-content hr {
   height: 1px;
-  margin: 32px 0;
+  margin: 34px 0;
   border: 0;
   background: #e7ebef;
 }
 
 html.hz-summary-doc .main-content h2,
 body.hz-summary-page .main-content h2 {
-  margin: 0 0 24px;
+  margin: 0 0 22px;
   color: #111827 !important;
-  font-size: 1.65rem;
+  font-size: 1.52rem;
   line-height: 1.25;
   font-weight: 850 !important;
 }
@@ -579,8 +601,8 @@ body.hz-summary-page .main-content h2 {
 html.hz-summary-doc .main-content h3,
 body.hz-summary-page .main-content h3 {
   margin: 0 0 13px;
-  color: #111827 !important;
-  font-size: 1.24rem;
+  color: #151d2c !important;
+  font-size: 1.16rem;
   line-height: 1.36;
   font-weight: 800 !important;
 }
@@ -589,7 +611,7 @@ html.hz-summary-doc .main-content h3 a,
 body.hz-summary-page .main-content h3 a,
 html.hz-summary-doc .main-content > ol a,
 body.hz-summary-page .main-content > ol a {
-  color: #4f46a3 !important;
+  color: #29316f !important;
   text-decoration: none;
 }
 
@@ -597,64 +619,64 @@ html.hz-summary-doc .main-content h3 a:hover,
 body.hz-summary-page .main-content h3 a:hover,
 html.hz-summary-doc .main-content > ol a:hover,
 body.hz-summary-page .main-content > ol a:hover {
-  color: #1f7a5c !important;
+  color: #9a4220 !important;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 html.hz-summary-doc .main-content p,
 body.hz-summary-page .main-content p {
-  color: #303846;
+  color: #374151;
 }
 
 html.hz-summary-doc .source-line,
 body.hz-summary-page .source-line {
-  margin: 16px 0 12px;
-  padding-left: 0.75em;
-  border-left: 2px solid #e4a078;
-  color: #7a8491;
-  font-size: 0.85rem;
+  margin: 14px 0 10px;
+  padding-left: 0;
+  border-left: 0;
+  color: #828b98;
+  font-size: 0.82rem;
 }
 
 html.hz-summary-doc .score-badge,
 body.hz-summary-page .score-badge {
-  padding: 0.12em 0.46em;
-  border: 1px solid #dfe4ea;
+  padding: 0.08em 0.38em;
+  border: 1px solid #e4e8ee;
   border-radius: 4px;
-  background: #eef2f6 !important;
-  color: #586475;
-  font-size: 0.68em;
+  background: #f4f6f8 !important;
+  color: #687385;
+  font-size: 0.64em;
   font-weight: 700;
 }
 
 html.hz-summary-doc .score-badge[data-tier="high"],
 body.hz-summary-page .score-badge[data-tier="high"] {
-  border-color: #ead3dc;
-  background: #f7edf2 !important;
-  color: #933763;
+  border-color: #edd9e2;
+  background: #faf1f5 !important;
+  color: #8a3d62;
 }
 
 html.hz-summary-doc .score-badge[data-tier="good"],
 body.hz-summary-page .score-badge[data-tier="good"] {
-  border-color: #efd9ca;
-  background: #f8eee8 !important;
-  color: #a35128;
+  border-color: #f0ded2;
+  background: #fbf3ee !important;
+  color: #965132;
 }
 
 html.hz-summary-doc .tag-line,
 body.hz-summary-page .tag-line {
-  margin-top: 16px;
-  color: #525c6a;
-  font-size: 0.9rem;
+  margin-top: 14px;
+  color: #687385;
+  font-size: 0.86rem;
 }
 
 html.hz-summary-doc .tag-line code,
 body.hz-summary-page .tag-line code {
-  padding: 0.08em 0.44em;
-  border: 1px solid #e3e7ec;
+  padding: 0.06em 0.38em;
+  border: 1px solid #e7ebef;
   border-radius: 4px;
-  background: #f4f6f8 !important;
-  color: #657180 !important;
+  background: #f7f8fa !important;
+  color: #727c8a !important;
   font-size: 0.76em;
   font-weight: 700;
 }
@@ -663,7 +685,7 @@ html.hz-summary-doc .main-content details,
 body.hz-summary-page .main-content details {
   border: 1px solid #e4e8ed;
   border-radius: 6px;
-  background: #fbfbfa;
+  background: #ffffff;
 }
 
 html.hz-summary-doc .main-content details summary,
@@ -672,16 +694,40 @@ body.hz-summary-page .main-content details summary {
   font-size: 0.94rem;
 }
 
+@media (max-width: 1100px) {
+  html.hz-summary-doc .page-header .project-name,
+  body.hz-summary-page .page-header .project-name {
+    max-width: min(980px, calc(100vw - 72px));
+    font-size: 3rem;
+  }
+}
+
 @media (max-width: 760px) {
   html.hz-summary-doc .page-header,
   body.hz-summary-page .page-header {
     min-height: 360px;
-    padding: 96px 18px 66px;
+    padding: 86px 18px 58px;
   }
 
   html.hz-summary-doc .page-header .project-name,
   body.hz-summary-page .page-header .project-name {
-    font-size: 2.4rem;
+    max-width: min(560px, calc(100vw - 36px));
+    font-size: 2.28rem;
+    line-height: 1.1;
+  }
+
+  html.hz-summary-doc .page-header .project-tagline,
+  body.hz-summary-page .page-header .project-tagline {
+    margin-top: 14px;
+    font-size: 0.98rem;
+  }
+
+  html.hz-summary-doc .page-header .btn,
+  body.hz-summary-page .page-header .btn {
+    width: fit-content !important;
+    min-width: 150px;
+    min-height: 40px;
+    margin-top: 24px;
   }
 
   html.hz-summary-doc .lang-toggle,
@@ -693,6 +739,13 @@ body.hz-summary-page .main-content details summary {
   html.hz-summary-doc .main-content,
   body.hz-summary-page .main-content {
     padding: 34px 18px 64px;
+  }
+}
+
+@media (max-width: 420px) {
+  html.hz-summary-doc .page-header .project-name,
+  body.hz-summary-page .page-header .project-name {
+    font-size: 2.04rem;
   }
 }
 
