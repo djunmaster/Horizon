@@ -13,7 +13,7 @@
   }
 })();
 </script>
-{% assign horizon_asset_version = site.asset_version %}
+{% assign horizon_asset_version = site.github.build_revision %}
 {% unless horizon_asset_version %}
 {% assign horizon_asset_version = site.time | date: '%s' %}
 {% endunless %}
