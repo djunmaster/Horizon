@@ -149,7 +149,35 @@
     });
   }
 
+  function summaryDateFromPage(projectTitle) {
+    var titleMatch = projectTitle.match(/(?:Horizon Summary|Adam's Daily Digest):\s*(\d{4}-\d{2}-\d{2})/);
+    if (titleMatch) return titleMatch[1];
+
+    var classMatch = document.documentElement.className.match(/\bhz-summary-(\d{4}-\d{2}-\d{2})\b/);
+    if (classMatch) return classMatch[1];
+
+    var pathMatch = window.location.pathname.match(/\/(\d{4})\/(\d{2})\/(\d{2})\/summary-(?:zh|en)(?:\.html)?$/);
+    if (!pathMatch) return null;
+    return pathMatch[1] + '-' + pathMatch[2] + '-' + pathMatch[3];
+  }
+
+  function setupSummaryPageHero() {
+    var projectName = document.querySelector('.page-header .project-name');
+    if (!projectName) return;
+
+    var date = summaryDateFromPage(projectName.textContent.trim());
+    if (!date) return;
+
+    document.body.classList.add('hz-summary-page');
+    projectName.textContent = "Adam's Daily Digest: " + date;
+    document.title = projectName.textContent + ' | Horizon Daily';
+
+    var tagline = document.querySelector('.page-header .project-tagline');
+    if (tagline) tagline.textContent = 'AI & research digest';
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    setupSummaryPageHero();
     setupDigestHome();
     processScoreBadges();
     markSemanticElements();
