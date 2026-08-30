@@ -1,12 +1,9 @@
 ---
 layout: default
-title: "Horizon Summary: 2026-08-30 (EN)"
+title: "Adam's Daily Digest: 2026-08-30"
+description: "AI & research digest"
 date: 2026-08-30
 lang: en
----
-
-> From 105 items, 7 important content pieces were selected
-
 ---
 
 **Technology News**
