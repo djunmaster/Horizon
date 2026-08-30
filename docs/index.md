@@ -41,7 +41,7 @@ title: Home
                 {{ post.date | date: "%Y-%m-%d" }}
               </time>
               <span class="digest-row-copy">
-                <strong>{{ post.title }}</strong>
+                <strong>{% if forloop.first %}今日日报{% else %}AI 技术与研究日报{% endif %}</strong>
                 <small>
                   {% if selected_count != "" %}
                     {{ selected_count }} 条内容
@@ -103,7 +103,7 @@ title: Home
                 {{ post.date | date: "%Y-%m-%d" }}
               </time>
               <span class="digest-row-copy">
-                <strong>{{ post.title }}</strong>
+                <strong>{% if forloop.first %}Today's Digest{% else %}AI Technology and Research Digest{% endif %}</strong>
                 <small>
                   {% if selected_count != "" %}
                     {{ selected_count }} items
