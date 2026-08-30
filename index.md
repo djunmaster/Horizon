@@ -8,53 +8,49 @@ title: Home
     {% assign zh_posts = site.posts | where: "lang", "zh" %}
     {% assign latest_zh = zh_posts | first %}
 
-    <section class="digest-hero" aria-labelledby="digest-title-zh">
-      <div class="digest-hero-inner">
+    <header class="digest-shell digest-masthead" aria-labelledby="digest-title-zh">
+      <div>
+        <p class="digest-kicker">Daily Brief</p>
         <h1 id="digest-title-zh">Adam's Daily Digest</h1>
-        <p>AI 驱动的技术与研究日报</p>
+        <p>每日汇总值得关注的 AI、技术与研究信号。</p>
+      </div>
+
+      <div class="digest-actions">
         {% if latest_zh %}
-          <a class="digest-date-pill" href="{{ latest_zh.url | relative_url }}" aria-label="打开最新中文日报">
-            <span class="calendar-glyph" aria-hidden="true"></span>
-            {{ latest_zh.date | date: "%Y-%m-%d" }}
-          </a>
+          <a class="digest-action digest-action-primary" href="{{ latest_zh.url | relative_url }}">最新 {{ latest_zh.date | date: "%Y-%m-%d" }}</a>
         {% endif %}
+        <a class="digest-action" href="{{ '/feed-zh.xml' | relative_url }}">RSS</a>
       </div>
-    </section>
+    </header>
 
-    <section class="digest-panel" aria-labelledby="digest-list-title-zh">
-      <div class="digest-panel-heading">
-        <span class="leaf-glyph" aria-hidden="true"></span>
-        <div>
-          <h2 id="digest-list-title-zh">每日速递</h2>
-          <p>聚焦技术前沿，洞察每日价值</p>
-        </div>
-        <a class="digest-rss-link" href="{{ '/feed-zh.xml' | relative_url }}" aria-label="订阅中文日报">RSS</a>
+    <main class="digest-shell digest-section" aria-labelledby="digest-list-title-zh">
+      <div class="digest-list-heading">
+        <h2 id="digest-list-title-zh">中文日报</h2>
+        <span>{{ zh_posts.size }} 期</span>
       </div>
 
-      <ol class="digest-timeline" data-digest-list>
+      <ol class="digest-list" data-digest-list>
         {% for post in zh_posts limit:20 %}
           {% assign selected_count = "" %}
           {% if post.content contains "筛选出 " %}
             {% assign selected_count = post.content | split: "筛选出 " | last | split: " 条" | first %}
           {% endif %}
-          <li class="digest-item{% if forloop.index > 5 %} is-extra-hidden{% endif %}">
-            <a class="digest-card" href="{{ post.url | relative_url }}">
-              <time class="digest-card-date" datetime="{{ post.date | date_to_xmlschema }}">
-                <span>{{ post.date | date: "%m-%d" }}</span>
-                <small>{{ post.date | date: "%Y" }}</small>
+          <li class="digest-row{% if forloop.index > 8 %} is-extra-hidden{% endif %}">
+            <a class="digest-row-link" href="{{ post.url | relative_url }}">
+              <time class="digest-row-date" datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%Y-%m-%d" }}
               </time>
-              <span class="digest-document-glyph" aria-hidden="true"></span>
-              <span class="digest-card-copy">
-                <strong>{% if forloop.first %}今日速递{% else %}每日速递{% endif %}</strong>
+              <span class="digest-row-copy">
+                <strong>{{ post.title }}</strong>
                 <small>
                   {% if selected_count != "" %}
-                    精选 {{ selected_count }} 篇技术与研究内容
+                    {{ selected_count }} 条内容
                   {% else %}
                     技术与研究日报
                   {% endif %}
                 </small>
               </span>
-              <span class="digest-chevron" aria-hidden="true"></span>
+              <span class="digest-row-action">阅读</span>
             </a>
           </li>
         {% else %}
@@ -62,65 +58,61 @@ title: Home
         {% endfor %}
       </ol>
 
-      {% if zh_posts.size > 5 %}
+      {% if zh_posts.size > 8 %}
         <button class="digest-load-more" type="button" data-digest-load-more>
-          加载更多 <span aria-hidden="true"></span>
+          加载更多
         </button>
       {% endif %}
-    </section>
+    </main>
   </div>
 
   <div id="lang-en" class="lang-section">
     {% assign en_posts = site.posts | where: "lang", "en" %}
     {% assign latest_en = en_posts | first %}
 
-    <section class="digest-hero" aria-labelledby="digest-title-en">
-      <div class="digest-hero-inner">
+    <header class="digest-shell digest-masthead" aria-labelledby="digest-title-en">
+      <div>
+        <p class="digest-kicker">Daily Brief</p>
         <h1 id="digest-title-en">Adam's Daily Digest</h1>
-        <p>AI-driven technology and research brief</p>
+        <p>A quiet index of the AI, technology, and research signals worth reading.</p>
+      </div>
+
+      <div class="digest-actions">
         {% if latest_en %}
-          <a class="digest-date-pill" href="{{ latest_en.url | relative_url }}" aria-label="Open latest English digest">
-            <span class="calendar-glyph" aria-hidden="true"></span>
-            {{ latest_en.date | date: "%Y-%m-%d" }}
-          </a>
+          <a class="digest-action digest-action-primary" href="{{ latest_en.url | relative_url }}">Latest {{ latest_en.date | date: "%Y-%m-%d" }}</a>
         {% endif %}
+        <a class="digest-action" href="{{ '/feed-en.xml' | relative_url }}">RSS</a>
       </div>
-    </section>
+    </header>
 
-    <section class="digest-panel" aria-labelledby="digest-list-title-en">
-      <div class="digest-panel-heading">
-        <span class="leaf-glyph" aria-hidden="true"></span>
-        <div>
-          <h2 id="digest-list-title-en">Daily Dispatch</h2>
-          <p>Focused signals from technology and research</p>
-        </div>
-        <a class="digest-rss-link" href="{{ '/feed-en.xml' | relative_url }}" aria-label="Subscribe English digest">RSS</a>
+    <main class="digest-shell digest-section" aria-labelledby="digest-list-title-en">
+      <div class="digest-list-heading">
+        <h2 id="digest-list-title-en">English Digest</h2>
+        <span>{{ en_posts.size }} issues</span>
       </div>
 
-      <ol class="digest-timeline" data-digest-list>
+      <ol class="digest-list" data-digest-list>
         {% for post in en_posts limit:20 %}
           {% assign selected_count = "" %}
           {% if post.content contains " important content" %}
             {% assign selected_count = post.content | split: " items, " | last | split: " important" | first %}
           {% endif %}
-          <li class="digest-item{% if forloop.index > 5 %} is-extra-hidden{% endif %}">
-            <a class="digest-card" href="{{ post.url | relative_url }}">
-              <time class="digest-card-date" datetime="{{ post.date | date_to_xmlschema }}">
-                <span>{{ post.date | date: "%m-%d" }}</span>
-                <small>{{ post.date | date: "%Y" }}</small>
+          <li class="digest-row{% if forloop.index > 8 %} is-extra-hidden{% endif %}">
+            <a class="digest-row-link" href="{{ post.url | relative_url }}">
+              <time class="digest-row-date" datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%Y-%m-%d" }}
               </time>
-              <span class="digest-document-glyph" aria-hidden="true"></span>
-              <span class="digest-card-copy">
-                <strong>{% if forloop.first %}Today's Digest{% else %}Daily Digest{% endif %}</strong>
+              <span class="digest-row-copy">
+                <strong>{{ post.title }}</strong>
                 <small>
                   {% if selected_count != "" %}
-                    Selected {{ selected_count }} technology and research items
+                    {{ selected_count }} items
                   {% else %}
                     Technology and research digest
                   {% endif %}
                 </small>
               </span>
-              <span class="digest-chevron" aria-hidden="true"></span>
+              <span class="digest-row-action">Read</span>
             </a>
           </li>
         {% else %}
@@ -128,11 +120,11 @@ title: Home
         {% endfor %}
       </ol>
 
-      {% if en_posts.size > 5 %}
+      {% if en_posts.size > 8 %}
         <button class="digest-load-more" type="button" data-digest-load-more>
-          Load more <span aria-hidden="true"></span>
+          Load more
         </button>
       {% endif %}
-    </section>
+    </main>
   </div>
 </div>
