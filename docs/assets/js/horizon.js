@@ -137,12 +137,12 @@
       if (!button) return;
 
       button.addEventListener('click', function () {
-        var hiddenItems = list.querySelectorAll('.digest-item.is-extra-hidden');
+        var hiddenItems = list.querySelectorAll('.is-extra-hidden');
         hiddenItems.forEach(function (item, index) {
           if (index < 5) item.classList.remove('is-extra-hidden');
         });
 
-        if (!list.querySelector('.digest-item.is-extra-hidden')) {
+        if (!list.querySelector('.is-extra-hidden')) {
           button.hidden = true;
         }
       });
