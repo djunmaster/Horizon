@@ -100,8 +100,8 @@ title: Home
       <ol class="digest-timeline" data-digest-list>
         {% for post in en_posts limit:20 %}
           {% assign selected_count = "" %}
-          {% if post.content contains "Selected " %}
-            {% assign selected_count = post.content | split: "Selected " | last | split: " important" | first %}
+          {% if post.content contains " important content" %}
+            {% assign selected_count = post.content | split: " items, " | last | split: " important" | first %}
           {% endif %}
           <li class="digest-item{% if forloop.index > 5 %} is-extra-hidden{% endif %}">
             <a class="digest-card" href="{{ post.url | relative_url }}">
