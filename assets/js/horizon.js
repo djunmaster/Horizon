@@ -124,7 +124,67 @@
     }
   }
 
+  function setupDigestHome() {
+    var home = document.querySelector('.digest-home');
+    if (!home) return;
+
+    document.body.classList.add('hz-digest-home');
+
+    var lists = home.querySelectorAll('[data-digest-list]');
+    lists.forEach(function (list) {
+      var section = list.closest('.lang-section') || home;
+      var button = section.querySelector('[data-digest-load-more]');
+      if (!button) return;
+
+      button.addEventListener('click', function () {
+        var hiddenItems = list.querySelectorAll('.digest-row.is-extra-hidden');
+        hiddenItems.forEach(function (item, index) {
+          if (index < 5) item.classList.remove('is-extra-hidden');
+        });
+
+        if (!list.querySelector('.digest-row.is-extra-hidden')) {
+          button.hidden = true;
+        }
+      });
+    });
+  }
+
+  function summaryDateFromPage(projectTitle) {
+    var titleMatch = projectTitle.match(/(?:Horizon Summary|Adam's Daily Digest):\s*(\d{4}-\d{2}-\d{2})/);
+    if (titleMatch) return titleMatch[1];
+
+    var classMatch = document.documentElement.className.match(/\bhz-summary-(\d{4}-\d{2}-\d{2})\b/);
+    if (classMatch) return classMatch[1];
+
+    var pathMatch = window.location.pathname.match(/\/(\d{4})\/(\d{2})\/(\d{2})\/summary-(?:zh|en)(?:\.html)?$/);
+    if (!pathMatch) return null;
+    return pathMatch[1] + '-' + pathMatch[2] + '-' + pathMatch[3];
+  }
+
+  function setupSummaryPageHero() {
+    var projectName = document.querySelector('.page-header .project-name');
+    if (!projectName) return;
+
+    var date = summaryDateFromPage(projectName.textContent.trim());
+    if (!date) return;
+
+    document.body.classList.add('hz-summary-page');
+    var dateNode = document.createElement('span');
+    dateNode.className = 'summary-date';
+    dateNode.textContent = date;
+    projectName.replaceChildren(
+      document.createTextNode("Adam's Daily Digest: "),
+      dateNode
+    );
+    document.title = projectName.textContent + ' | Horizon Daily';
+
+    var tagline = document.querySelector('.page-header .project-tagline');
+    if (tagline) tagline.textContent = 'AI & research digest';
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    setupSummaryPageHero();
+    setupDigestHome();
     processScoreBadges();
     markSemanticElements();
     setupLanguageToggle();

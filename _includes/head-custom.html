@@ -4,11 +4,24 @@
 <link rel="alternate" type="application/rss+xml" title="Horizon Daily RSS (All)" href="{{ '/feed.xml' | relative_url }}">
 <link rel="alternate" type="application/atom+xml" title="Horizon Daily RSS (ZH)" href="{{ '/feed-zh.xml' | relative_url }}">
 <link rel="alternate" type="application/atom+xml" title="Horizon Daily RSS (EN)" href="{{ '/feed-en.xml' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/horizon.css' | relative_url }}">
+<script>
+(function () {
+  var match = window.location.pathname.match(/\/(\d{4})\/(\d{2})\/(\d{2})\/summary-(?:zh|en)(?:\.html)?$/);
+  if (match) {
+    document.documentElement.classList.add('hz-summary-doc');
+    document.documentElement.classList.add('hz-summary-' + match[1] + '-' + match[2] + '-' + match[3]);
+  }
+})();
+</script>
+{% assign horizon_asset_version = site.github.build_revision %}
+{% unless horizon_asset_version %}
+{% assign horizon_asset_version = site.time | date: '%s' %}
+{% endunless %}
+<link rel="stylesheet" href="{{ '/assets/css/horizon.css' | relative_url }}?v={{ horizon_asset_version }}">
 <style>
 .rss-icon{opacity:.6;color:inherit;margin-left:12px;vertical-align:middle;text-decoration:none;transition:all .2s}
 .rss-icon:hover{opacity:1;color:#f26522}
 .rss-icon svg{width:0.9em;height:0.9em;display:inline-block}
-@media(prefers-color-scheme:dark){body{background:#1a1726!important;color:#e8e4f0!important}}
+@media(prefers-color-scheme:dark){body{background:#1a1726!important;color:#e8e4f0!important}html.hz-summary-doc body{background:#fff!important;color:#1d2433!important}}
 </style>
-<script src="{{ '/assets/js/horizon.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/horizon.js' | relative_url }}?v={{ horizon_asset_version }}" defer></script>

@@ -1,11 +1,10 @@
 ---
 layout: default
-title: "Horizon Summary: 2026-09-01 (ZH)"
+title: "Adam's Daily Digest: 2026-09-01"
+description: "AI & research digest"
 date: 2026-09-01
 lang: zh
 ---
-
-> 已分析 66 条内容，但没有达到重要性阈值的条目。
 
 今日暂无重要动态，可能原因：
 - 今天关注的信息源较平静
